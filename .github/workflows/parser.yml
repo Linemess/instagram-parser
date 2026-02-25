@@ -23,5 +23,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run parser
+        env:
+          IG_USERNAME: ${{ secrets.IG_USERNAME }}
+          IG_PASSWORD: ${{ secrets.IG_PASSWORD }}
         run: |
           python parser.py
